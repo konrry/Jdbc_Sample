@@ -12,9 +12,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017/4/7.
+ * Created by Administrator on 2017/4/10.
  */
-public class InsertSimple {
+public class InsertWithReturnId {
 
     public static void main(String[] args) {
 
@@ -24,10 +24,16 @@ public class InsertSimple {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://10.112.4.177:3306/test","root","123456");
             statement = connection.createStatement();
-            statement.execute("insert INTO t_user (name,age,sex) VALUE (\"MaoYi\",20,\"MALE\")");
+            int status = statement.executeUpdate("insert INTO t_user (name,age,sex) VALUE (\"MaoWu\",20,\"MALE\")",Statement.RETURN_GENERATED_KEYS);
+            ResultSet resultSet = statement.getGeneratedKeys();
+            resultSet.next();
+            long id = resultSet.getLong(1);
+            System.out.println("id: "+id);
         } catch (Exception e){
             e.printStackTrace();
         }finally {
+
+            //7 关闭statement
             if(statement != null){
                 try {
                     statement.close();
@@ -36,6 +42,7 @@ public class InsertSimple {
                 }
             }
 
+            //8 关闭connection
             if(connection != null){
                 try {
                     connection.close();
