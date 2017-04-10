@@ -8,64 +8,23 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <name>jdbc_comm</name>
-    <artifactId>jdbc_comm</artifactId>
+    <packaging>war</packaging>
+
+    <name>jdbc_spring</name>
+    <artifactId>jdbc_spring</artifactId>
 
     <dependencies>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.26</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.29</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>5.0.0.M5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>5.0.0.M5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>5.0.0.M5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>5.0.0.M5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.0.0.M5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>5.0.0.M5</version>
+            <groupId>net.galvin.jdbc</groupId>
+            <artifactId>jdbc_comm</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
 
     <build>
-        <finalName>jdbc_comm</finalName>
+        <finalName>jdbc_spring</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

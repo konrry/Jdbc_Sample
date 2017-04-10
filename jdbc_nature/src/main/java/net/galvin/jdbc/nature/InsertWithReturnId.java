@@ -32,8 +32,6 @@ public class InsertWithReturnId {
         } catch (Exception e){
             e.printStackTrace();
         }finally {
-
-            //7 关闭statement
             if(statement != null){
                 try {
                     statement.close();
@@ -41,8 +39,6 @@ public class InsertWithReturnId {
                     e.printStackTrace();
                 }
             }
-
-            //8 关闭connection
             if(connection != null){
                 try {
                     connection.close();

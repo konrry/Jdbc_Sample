@@ -11,6 +11,8 @@
     <modules>
         <module>jdbc_comm</module>
         <module>jdbc_nature</module>
+        <module>jdbc_spring</module>
+        <module>jdbc_client</module>
     </modules>
 
 
