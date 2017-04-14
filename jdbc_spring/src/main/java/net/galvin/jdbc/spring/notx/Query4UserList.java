@@ -1,4 +1,4 @@
-package net.galvin.jdbc.spring;
+package net.galvin.jdbc.spring.notx;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import net.galvin.jdbc.comm.pojo.User;

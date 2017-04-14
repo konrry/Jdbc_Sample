@@ -8,11 +8,7 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
 
 import java.util.Properties;
 
-/**
- * Created by Administrator on 2017/4/10.
- */
 public class UserTransactionDemo {
-
     public static void main(String[] args) throws ClassNotFoundException {
 
         //初始化数据源
@@ -49,5 +45,4 @@ public class UserTransactionDemo {
         userDaoProxy.insert(10);
 
     }
-
 }

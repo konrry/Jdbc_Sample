@@ -1,16 +1,20 @@
-package net.galvin.jdbc.spring;
+package net.galvin.jdbc.spring.notx;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import net.galvin.jdbc.comm.pojo.User;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
-import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2017/4/10.
  */
-public class Query4List {
+public class Query4BeanPropertyRowMapper {
 
     private static JdbcTemplate jdbcTemplate;
 
@@ -21,7 +25,8 @@ public class Query4List {
         dataSource.setUsername("root");
         jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
-        List<Map<String,Object>> userMap = jdbcTemplate.queryForList("SELECT * FROM t_user");
+        List<User> userMap =
+                jdbcTemplate.query("SELECT * FROM t_user", new BeanPropertyRowMapper<User>(User.class));
         System.out.println(userMap);
     }
 
